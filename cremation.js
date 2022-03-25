@@ -10,6 +10,7 @@ G.AddData({
 		//the specified mod names can be in the form of "mod name*", in which case the game will look for any mod with a name that begins with "mod name"
 	func:function()
 	{
+		/*
 		G.getUnit('firekeeper').modes['cremate'] = {
 			name:'Cremate corpses',
 			icon:[8,3],
@@ -23,5 +24,6 @@ G.AddData({
 			repeat:10,
 			mode:'cremate'
 		});
+		*/
 	}
 });
