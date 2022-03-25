@@ -6,11 +6,11 @@ G.AddData({
 	requires:['Default dataset*'],
 	func:function()
 	{
-		
 		G.getDict('firekeeper').modes['cremate'] = {
 			name:'Cremate corpses',
 			icon:[8,3],
-			desc:'Clear out [corpse]s faster than they can be buried.'
+			desc:'Clear out [corpse]s faster than they can be buried.',
+			req:{'iron-working':true,'burial':true}
 		};
 		G.getDict('firekeeper')['effects'].push({
 			type:'convert',
@@ -20,6 +20,8 @@ G.AddData({
 			repeat:1,
 			mode:'cremate'
 		});
+
+		G.getDict('iron-working').desc+='@[firekeeper]s can now cremate [corpse]s.'
 
 	}
 });
