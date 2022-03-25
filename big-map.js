@@ -4,9 +4,9 @@ G.AddData({
 	desc:'Doubles the height of the map and the width of the map',
 	engineVersion:1,
 	requires:['Default dataset*'],
-	newMapSize:2,
 	func:function()
 	{
+		let newMapSize = 2;
 		G.funcs['create map']=function(w,h)
 		{
 			w*=newMapSize;
