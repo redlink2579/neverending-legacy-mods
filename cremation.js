@@ -11,7 +11,7 @@ G.AddData({
 			name:'Cremate corpses',
 			icon:[8,3],
 			desc:'Clear out [corpse]s faster than they can be buried.'
-		};/*
+		};
 		G.getDict('firekeeper')['effects'].push({
 			type:'convert',
 			from:{'corpse':10,'fire pit':0.01},
@@ -20,6 +20,6 @@ G.AddData({
 			repeat:10,
 			mode:'cremate'
 		});
-		*/
+		
 	}
 });
