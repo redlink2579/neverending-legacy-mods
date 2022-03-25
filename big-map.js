@@ -5,6 +5,7 @@ G.AddData({
 	engineVersion:1,
 	func:function()
 	{
+		console.log('Map mod loaded!');
 		G.funcs['create map']=function(w,h)
 		{
 			let newMapSize = 2;
