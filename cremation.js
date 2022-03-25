@@ -6,8 +6,6 @@ G.AddData({
 	desc:'Adds the cremation option for firekeepers once iron is unlocked',
 		//optional; a simple description of the mod
 	engineVersion:1,
-		//optional; the game engine version that was current when the game was released; the mod won't load if this is older than the current game engine, so mod authors should keep this up to date - alternatively, if this value isn't specified, the mod will work no matter the game engine version (be careful, as other incompatibilities and strange behaviors may arise)
-	requires:[],
 		//optional; a list of mod names that this mod requires; this mod will fail loading if at least one of its required mods fails to load, has errors, or comes after it in the mod list
 		//the specified mod names can be in the form of "mod name*", in which case the game will look for any mod with a name that begins with "mod name"
 	func:function()
