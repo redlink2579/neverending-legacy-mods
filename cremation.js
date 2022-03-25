@@ -14,12 +14,12 @@ G.AddData({
 		};
 		G.getDict('firekeeper')['effects'].push({
 			type:'convert',
-			from:{'corpse':10,'fire pit':0.01},
+			from:{'corpse':1,'fire pit':0.01},
 			into:{},
 			every:1,
-			repeat:10,
+			repeat:1,
 			mode:'cremate'
 		});
-		
+
 	}
 });
