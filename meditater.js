@@ -14,7 +14,11 @@ G.AddData({
             upkeep:{'coin':0.2},
             effects:[
                 {type:'function',func:(me)=>{
-                    console.log(me.amount - me.idle);
+                    let amount = me.amount - me.idle;
+                    // Limit of 25% chance per day, logarithmic
+                    if (.25 * (((-.5) ** amount) + 1) > Math.random()) {
+
+                    };
                 }}
             ],
             req:{'ritualism':true},
