@@ -9,6 +9,7 @@ G.AddData({
 		let newMapSize = 2;
 		G.funcs['create map']=function(w,h)
 		{
+			console.log('Big map executed!');
 			w*=newMapSize;
 			h*=newMapSize;
 			//generate basic geography using Conway's Game of Life (rule : births from 4 to 9 neighbors, survival from 6 to 9 neighbors)
