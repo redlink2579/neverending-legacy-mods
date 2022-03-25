@@ -17,7 +17,7 @@ G.AddData({
                     let amount = me.amount - me.idle;
                     // Limit of 25% chance per day, logarithmic
                     if (.25 * (((-.5) ** amount) + 1) > Math.random()) {
-
+                        G.fastTicks++;
                     };
                 }}
             ],
