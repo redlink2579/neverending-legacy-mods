@@ -13,8 +13,9 @@ G.AddData({
             use:{'worker':1},
             upkeep:{'coin':0.2},
             effects:[
-                {type:'gather',what:{'faith':0.1,'happiness':0.2}},
-                {type:'gather',what:{'faith':0.05},req:{'symbolism':true}}
+                {type:'function',func:(me)=>{
+                    console.log(me.amount - me.idle);
+                }}
             ],
             req:{'ritualism':true},
             category:'spiritual',
