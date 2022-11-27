@@ -1,13 +1,13 @@
 G.AddData({
-	name:'Mega Map',
+	name:'Custom Map Size',
 	author:'Owen "Ohead" Parker',
-	desc:'Doubles the height of the map and the width of the map',
+	desc:'Customize the size of the map',
 	engineVersion:1,
 	func:function()
 	{
 		G.createMaps=function()//when creating a new game
 		{
-			G.currentMap=new G.Map(0,48,48);//main world map
+			G.currentMap=new G.Map(0,Math.floor(prompt('How many times wider shall the world be?') * 24),Math.floor(prompt('How many times taller shall the world be?') * 24));//main world map
 
 			//set starting tile by ranking all land tiles by score and picking one
 			var goodTiles=[];
