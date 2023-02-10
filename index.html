@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
 	</head>
 	<body>
+		<script src="./copyAllMods.js"></script>
 		<div id="dialogues" class="on">
 			<div class="fullCenteredOuter" style="height: 100%; position: absolute;">
 				<div class="fullCenteredInner" style="text-align: center;">
@@ -16,29 +17,20 @@
 						<div class="fancyText title">Owen's Neverending Legacy Mods</div>
 						<div class="par fancyText">Any of these links can be copy/pasted or dragged into the mod menu</div>
 						<div class="divider"></div>
-						<div class="par fancyText bitBiggerText">Cremation</div>
-						<div class="par fancyText">During the endgame, people start dying faster than they can be buried.<br>Cremation is the solution! It's a mode for firekeepers, unlocked from ironworking.</div>
-						<a href="https://therealohead.github.io/neverending-legacy-mods/cremation.js">https://therealohead.github.io/neverending-legacy-mods/cremation.js</a>
-						<div class="divider"></div>
-						<div class="par fancyText bitBiggerText">Custom Map</div>
-						<div class="par fancyText">My good pal Damien was unhappy about the size of the map, so I went ahead and gave control of map size to the user.</div>
-						<a href="https://therealohead.github.io/neverending-legacy-mods/big-map.js">https://therealohead.github.io/neverending-legacy-mods/big-map.js</a>
-						<div class="divider"></div>
-						<div class="par fancyText bitBiggerText">Meditation</div>
-						<div class="par fancyText">During the endgame, it is literally not possible to generate fast ticks without pausing the game. Meditaters can help with that.</div>
-						<a href="https://therealohead.github.io/neverending-legacy-mods/meditater.js">https://therealohead.github.io/neverending-legacy-mods/meditater.js</a>
-						<div class="divider"></div>
-						<div class="par fancyText bitBiggerText">Don't Eat Herbs</div>
-						<div class="par fancyText">The only unavoidable way happiness can go down is eating herbs.<br>Why would people eat something they don't like when cured seafood and cooked meat exist?<br>This mod adds a new policy to disallow eating herbs.</div>
-						<a href="https://therealohead.github.io/neverending-legacy-mods/dont-eat-herbs.js">https://therealohead.github.io/neverending-legacy-mods/meditater.js</a>
-						
-						<button>
+
+						<div id="modlist"></div>
+
+						<div class="button" onclick="copyAllMods()">
 							Copy All Mods
-						</button>
+						</div>
+						<br>
+						<span style="color:chartreuse; display:none" id="copied-text">Copied!</span>
 
 					</div>
 				</div>
 			</div>
 		</div>
+		<script src="./populate.js"></script>
+		<script src="./setLinkText.js"></script>
 	</body>
 </html>
