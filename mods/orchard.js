@@ -20,13 +20,14 @@ G.AddData({
 
         new G.Unit({
             name:'orchard',
-            desc:'@generates fruit<>An [orchard] provides [fruit] much faster than a gather can.',
+            desc:'@generates [fruit]<>An [orchard] provides [fruit] much faster than a gather can.',
             icon:[4,7],
-            cost:{'fruit':50},
+            cost:{'fruit':15},
             use:{'worker':1,'land':5},
             upkeep:{'coin':0.2},
             effects:[
-                {type:'gather',context:'grow',what:{'fruit':1},amount:15,max:20},
+                {type:'gather',context:'grow',what:{'fruit':1}},
+                {type:'mult',value:5,req:{'harvest rituals':'on'}},
                 {type:'mult',value:1.2,req:{'harvest rituals':'on'}}
             ],
             req:{'agriculture':true},
