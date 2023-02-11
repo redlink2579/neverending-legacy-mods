@@ -10,7 +10,7 @@ G.AddData({
         new G.Tech({
             name:'agriculture',
             desc:'@unlocks [orchard]s<>[orchard]s provide [fruit] much faster than a gather can.',
-            icon:[23,1,4,7],
+            icon:[4,7,23,1],
             cost:{'insight':15},
             req:{'sedentism':true},
             effects:[
