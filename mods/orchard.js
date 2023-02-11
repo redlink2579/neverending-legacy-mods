@@ -26,8 +26,7 @@ G.AddData({
             use:{'worker':1,'land':5},
             upkeep:{'coin':0.2},
             effects:[
-                {type:'gather',context:'grow',what:{'fruit':1}},
-                {type:'mult',value:5,req:{'harvest rituals':'on'}},
+                {type:'gather',context:'grow',what:{'fruit':15}},
                 {type:'mult',value:1.2,req:{'harvest rituals':'on'}}
             ],
             req:{'agriculture':true},
