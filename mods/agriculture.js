@@ -3,13 +3,14 @@ G.AddData({
 	author:'Owen "Ohead" Parker',
 	desc:'Adds various farming units.',
 	engineVersion:1,
+    sheets:{'agriculture':'https://therealohead.github.io/neverending-legacy-mods/mods/agriculture/img/icons.png'},
 	func:function()
 	{   
         G.contextNames['grow']='Growing';
 
         new G.Tech({
             name:'agriculture',
-            desc:'@unlocks [orchard]s<>[orchard]s provide [fruit] much faster than a gather can.@unlocks ',
+            desc:'@unlocks [orchard]s, which provide [fruit] much faster than a gather can.<>@unlocks [grain farm]s, which produce [grain]',
             icon:[4,7,23,1],
             cost:{'insight':15},
             req:{'sedentism':true},
@@ -36,7 +37,7 @@ G.AddData({
         new G.Unit({
             name:'grain farm',
             desc:'@generates [grain]<>[grain,Grain] can be baked into [bread], a stable food source.',
-            icon:[3,0],
+            icon:[0,1,'agriculture'],
             cost:{},
             use:{'worker':5,'land':10},
             upkeep:{'coin':0.5},
