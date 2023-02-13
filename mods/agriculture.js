@@ -22,7 +22,7 @@ G.AddData({
         new G.Unit({
             name:'orchard',
             desc:'@generates [fruit]<>An [orchard] provides [fruit] much faster than a gather can.',
-            icon:[4,7],
+            icon:[1,1,'agriculture'],
             cost:{'fruit':15},
             use:{'worker':2,'land':5},
             upkeep:{'coin':0.2},
@@ -52,7 +52,7 @@ G.AddData({
         new G.Res({
             name:'grain',
             desc:'[grain,Grain] can be ground into flour and baked into [bread].',
-            icon:[3,0],
+            icon:[2,1,'agriculture'],
             turnToByContext:{'decay':{'grain':0.2,'spoiled food':0.8}},
             category:'misc',
         });
