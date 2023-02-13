@@ -11,11 +11,11 @@ G.AddData({
         new G.Tech({
             name:'agriculture',
             desc:'@unlocks [orchard]s, which provide [fruit] much faster than a gather can.<>@unlocks [grain farm]s, which produce [grain]',
-            icon:[4,7,23,1],
+            icon:[0,1,'agriculture',23,1],
             cost:{'insight':15},
-            req:{'sedentism':true},
+            req:{'sedentism':true,'smelting':true},
             effects:[
-                {type:'show context',what:['orchard']},
+                {type:'show context',what:['orchard','grain farm']},
             ],
         });
 
@@ -24,7 +24,7 @@ G.AddData({
             desc:'@generates [fruit]<>An [orchard] provides [fruit] much faster than a gather can.',
             icon:[1,1,'agriculture'],
             cost:{'fruit':15},
-            use:{'worker':2,'land':5},
+            use:{'worker':2,'land':5,'stone tools':2},
             upkeep:{'coin':0.2},
             effects:[
                 {type:'gather',context:'grow',what:{'fruit':15}},
@@ -39,7 +39,7 @@ G.AddData({
             desc:'@generates [grain]<>[grain,Grain] can be baked into [bread], a stable food source.',
             icon:[0,1,'agriculture'],
             cost:{},
-            use:{'worker':5,'land':10},
+            use:{'worker':5,'land':10,'metal tools':5},
             upkeep:{'coin':0.5},
             effects:[
                 {type:'gather',context:'grow',what:{'grain':15}},
