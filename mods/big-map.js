@@ -12,8 +12,6 @@ G.AddData({
 			oldCreateMaps();
 
 			function makeMap() {
-				G.dialogue.forceClose();
-
 				widthMultiplier = Math.max(24,Math.floor(widthMultiplier * 24));
 				heightMultiplier = Math.max(24,Math.floor(heightMultiplier * 24));
 				G.currentMap=new G.Map(0,widthMultiplier,heightMultiplier);//main world map
@@ -47,7 +45,11 @@ G.AddData({
 
 				G.updateMapDisplay();
 				G.centerMap(G.currentMap);
+
+
+				
 				G.setSetting('paused',0);
+				G.dialogue.forceClose();
 			}
 
 			let widthMultiplier = 1;
