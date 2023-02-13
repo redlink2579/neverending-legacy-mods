@@ -35,8 +35,8 @@ G.AddData({
 
         new G.Unit({
             name:'grain farm',
-            desc:'@generates [grain]<>[grain] can be baked into [bread], a stable food source',
-            icon:[4,7],
+            desc:'@generates [grain]<>[grain,Grain] can be baked into [bread], a stable food source.',
+            icon:[3,0],
             cost:{},
             use:{'worker':5,'land':10},
             upkeep:{'coin':0.5},
@@ -46,6 +46,14 @@ G.AddData({
             ],
             req:{'agriculture':true},
             category:'production',
+        });
+
+        new G.Res({
+            name:'grain',
+            desc:'[grain,Grain] can be ground into flour and baked into [bread].',
+            icon:[3,0],
+            turnToByContext:{'decay':{'grain':0.2,'spoiled food':0.8}},
+            category:'misc',
         });
 	}
 });
