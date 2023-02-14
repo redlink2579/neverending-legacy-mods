@@ -53,6 +53,7 @@ G.AddData({
             ],
             req:{'agriculture':true},
             category:'production',
+            gizmos:true,
         });
 
         new G.Res({
