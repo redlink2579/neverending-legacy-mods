@@ -71,5 +71,34 @@ G.AddData({
             turnToByContext:{'decay':{'grain':0.2,'spoiled food':0.8}},
             category:'misc',
         });
+
+        new G.Res({
+            name:'fine clothes',
+            desc:'Sewn together from [cotton].//Each [population,Person] wearing clothing is slightly happier and healthier.'+clothesInfo,
+            icon:[16,7],
+            category:'gear',
+            tick:function(me,tick)
+            {
+                var toSpoil=me.amount*0.0005;
+                var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+            },
+        });
+
+        G.getDict('clothier').modes['weave fine clothes']={name:'Weave fine clothing',desc:'Turn 95 [cotton] into [fine clothes].',req:{'agriculture':true},use:{'metal tools':1}};
+        G.getDict('clothier').effects.push({type:'convert',from:{'cotton':95},into:{'fine clothes':1},every:20,mode:'weave fine clothes'});
+
+        var objects={'fine clothes':[0.2,0.2]};
+        var leftout=me.amount;
+        var prev=leftout;
+        var fulfilled=0;
+        for (var i in objects)
+        {
+            fulfilled=Math.min(me.amount,Math.min(G.getRes(i).amount,leftout));
+            G.gain('happiness',fulfilled*objects[i][0],'clothing');
+            G.gain('health',fulfilled*objects[i][1],'clothing');
+            leftout-=fulfilled;
+        }
+        G.gain('happiness',-leftout*0.15,'no clothing');
+        G.gain('health',-leftout*0.15,'no clothing');
 	}
 });
