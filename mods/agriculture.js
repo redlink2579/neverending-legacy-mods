@@ -60,7 +60,8 @@ G.AddData({
             name:'grain',
             desc:'[grain,Grain] can be ground into flour and baked into [bread].',
             icon:[2,1,'agriculture'],
-            category:'misc',
+            category:'food',
+            partOf:'food',
             tick:function(me,tick){
                 var toSpoil=me.amount*0.01;
                 var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
@@ -71,41 +72,14 @@ G.AddData({
             name:'cotton',
             desc:'[cotton,Cotton] can be sewn into [basic clothes,clothes].',
             icon:[3,1,'agriculture'],
-            category:'misc',
+            category:'build',
             tick:function(me,tick){
                 var toSpoil=me.amount*0.01;
                 var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
             },
         });
 
-        var clothesInfo='//Your people automatically wear the highest-quality clothing available, moving on to the next type if there isn\'t enough.';
-        new G.Res({
-            name:'fine clothes',
-            desc:'Sewn together from [cotton].//Each [population,Person] wearing clothing is slightly happier and healthier.'+clothesInfo,
-            icon:[16,7],
-            category:'gear',
-            tick:function(me,tick)
-            {
-                var toSpoil=me.amount*0.0005;
-                var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-            },
-        });
-
-        G.getDict('clothier').modes['weave fine clothes']={name:'Weave fine clothing',desc:'Turn 95 [cotton] into [fine clothes].',req:{'agriculture':true},use:{'metal tools':1}};
-        G.getDict('clothier').effects.push({type:'convert',from:{'cotton':95},into:{'fine clothes':1},every:20,mode:'weave fine clothes'});
-
-        var objects={'fine clothes':[0.2,0.2]};
-        var leftout=G.getRes('population').amount;
-        var prev=leftout;
-        var fulfilled=0;
-        for (var i in objects)
-        {
-            fulfilled=Math.min(G.getRes('population').amount.amount,Math.min(G.getRes(i).amount,leftout));
-            G.gain('happiness',fulfilled*objects[i][0],'clothing');
-            G.gain('health',fulfilled*objects[i][1],'clothing');
-            leftout-=fulfilled;
-        }
-        G.gain('happiness',-leftout*0.15,'no clothing');
-        G.gain('health',-leftout*0.15,'no clothing');
+        G.getDict('clothier').modes['weave cotton clothes']={name:'Weave cotton clothing',desc:'Turn 40 [cotton] into [basic clothes].',req:{'agriculture':true},use:{'metal tools':1}};
+        G.getDict('clothier').effects.push({type:'convert',from:{'cotton':40},into:{'basic clothes':1},every:20,mode:'weave cotton clothes'});
 	}
 });
