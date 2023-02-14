@@ -60,16 +60,22 @@ G.AddData({
             name:'grain',
             desc:'[grain,Grain] can be ground into flour and baked into [bread].',
             icon:[2,1,'agriculture'],
-            turnToByContext:{'decay':{'grain':0.2,'spoiled food':0.8}},
             category:'misc',
+            tick:function(me,tick){
+                var toSpoil=me.amount*0.01;
+                var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+            },
         });
 
         new G.Res({
             name:'cotton',
             desc:'[cotton,Cotton] can be sewn into [basic clothes,clothes].',
             icon:[3,1,'agriculture'],
-            turnToByContext:{'decay':{'grain':0.2,'spoiled food':0.8}},
             category:'misc',
+            tick:function(me,tick){
+                var toSpoil=me.amount*0.01;
+                var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+            },
         });
 
         var clothesInfo='//Your people automatically wear the highest-quality clothing available, moving on to the next type if there isn\'t enough.';
