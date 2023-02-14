@@ -89,7 +89,7 @@ G.AddData({
         G.getDict('clothier').effects.push({type:'convert',from:{'cotton':95},into:{'fine clothes':1},every:20,mode:'weave fine clothes'});
 
         var objects={'fine clothes':[0.2,0.2]};
-        var leftout=me.amount;
+        var leftout=G.getRes('population').amount;
         var prev=leftout;
         var fulfilled=0;
         for (var i in objects)
