@@ -94,7 +94,7 @@ G.AddData({
         var fulfilled=0;
         for (var i in objects)
         {
-            fulfilled=Math.min(me.amount,Math.min(G.getRes(i).amount,leftout));
+            fulfilled=Math.min(G.getRes('population').amount.amount,Math.min(G.getRes(i).amount,leftout));
             G.gain('happiness',fulfilled*objects[i][0],'clothing');
             G.gain('health',fulfilled*objects[i][1],'clothing');
             leftout-=fulfilled;
