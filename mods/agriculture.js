@@ -72,6 +72,7 @@ G.AddData({
             category:'misc',
         });
 
+        var clothesInfo='//Your people automatically wear the highest-quality clothing available, moving on to the next type if there isn\'t enough.';
         new G.Res({
             name:'fine clothes',
             desc:'Sewn together from [cotton].//Each [population,Person] wearing clothing is slightly happier and healthier.'+clothesInfo,
