@@ -5,7 +5,11 @@ G.AddData({
 	engineVersion:1,
 	func:function()
 	{
+		// Only do all this bullshit if we haven't before
+		if (owensSexyMapFlag) return;
+
 		let oldCreateMaps = G.createMaps.bind({});
+		var owensSexyMapFlag = true;
 		G.createMaps=function()//when creating a new game
 		{
 			// Temporary map
