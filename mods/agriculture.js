@@ -55,6 +55,7 @@ G.AddData({
             category:'production',
             gizmos:true,
         });
+
         new G.Unit({
             name:'bakery',
             desc:'@bakes [grain] into [bread]',
@@ -69,7 +70,7 @@ G.AddData({
                 {type:'convert',from:{'grain':6},into:{'bread':1},repeat:5,mode:'bread'},
             ],
             req:{'agriculture':true,'cooking':true},
-            category:'production',
+            category:'crafting',
             gizmos:true,
         });
 
