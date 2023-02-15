@@ -41,21 +41,3 @@ let list = [
 list.forEach(mod=>{
     mod.build();
 });
-
-/*
-<div class="par fancyText bitBiggerText">Cremation</div>
-<div class="par fancyText"></div>
-<a class="mod-link" href="https://therealohead.github.io/neverending-legacy-mods/mods/cremation.js"></a>
-<div class="divider"></div>
-<div class="par fancyText bitBiggerText">Custom Map</div>
-<div class="par fancyText">My good pal Damien was unhappy about the size of the map, so I went ahead and gave control of map size to the user.</div>
-<a class="mod-link" href="https://therealohead.github.io/neverending-legacy-mods/mods/big-map.js"></a>
-<div class="divider"></div>
-<div class="par fancyText bitBiggerText">Meditation</div>
-<div class="par fancyText">During the endgame, it is literally not possible to generate fast ticks without pausing the game. Meditaters can help with that.</div>
-<a class="mod-link" href="https://therealohead.github.io/neverending-legacy-mods/mods/meditater.js"></a>
-<div class="divider"></div>
-<div class="par fancyText bitBiggerText">Don't Eat Herbs</div>
-<div class="par fancyText">The only unavoidable way happiness can go down is eating herbs.<br>Why would people eat something they don't like when cured seafood and cooked meat exist?<br>This mod adds a new policy to disallow eating herbs.</div>
-<a class="mod-link" href="https://therealohead.github.io/neverending-legacy-mods/mods/dont-eat-herbs.js"></a>
-*/

@@ -6,16 +6,32 @@ G.AddData({
     sheets:{'agriculture':'https://therealohead.github.io/neverending-legacy-mods/mods/agriculture/img/icons.png'},
 	func:function()
 	{   
+        G.dict['scavenging'].req['agriculture'] = false;
         G.contextNames['grow']='Growing';
 
         new G.Tech({
             name:'agriculture',
-            desc:'@unlocks [orchard]s, which provide [fruit] much faster than a gather can.<>@unlocks [grain farm]s, which produce [grain]',
+            desc:'@unlocks [orchard]s, which provide [fruit] much faster than a gather can.<>@unlocks [farm]s, which produce [grain] or [cotton]<>@<span style="color:red">removes the [scavenging] trait</span>',
             icon:[0,1,'agriculture',23,1],
             cost:{'insight':15},
             req:{'sedentism':true},
             effects:[
-                {type:'show context',what:['orchard','grain farm']},
+                {type:'show context',what:['orchard','farm']},
+                {type:'function',func:()=>{
+                    console.log('We got agriculture');
+                    G.dict['scavenging'].chance = 0;
+                }}
+            ],
+        });
+
+        new G.Tech({
+            name:'milling',
+            desc:'@unlocks [windmill]s@unlocks [water mill]s<>[windmill,Windmills] provide rotational force from wind<>[water mill,Water mills]',
+            icon:[0,1,'agriculture',23,1],
+            cost:{'insight':15},
+            req:{'sedentism':true},
+            effects:[
+                {type:'show context',what:['orchard','farm']},
             ],
         });
 
@@ -64,10 +80,10 @@ G.AddData({
             use:{'land':1},
             upkeep:{'coin':0.5},
             modes:{
-                'bread':{name:'Bread baking',icon:[2,1,'agriculture'],desc:'Bake [bread]',use:{'worker':5,'metal tools':5}}
+                'Bake bread':{name:'Bread baking',icon:[2,1,'agriculture'],desc:'Bake [bread]',use:{'worker':5,'metal tools':5}}
             },
             effects:[
-                {type:'convert',from:{'grain':6},into:{'bread':1},repeat:5,mode:'bread'},
+                {type:'convert',from:{'grain':6,'water',3},into:{'bread':1},repeat:5,mode:'Bake bread'},
             ],
             req:{'agriculture':true,'cooking':true},
             category:'crafting',
