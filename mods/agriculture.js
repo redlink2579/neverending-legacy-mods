@@ -58,10 +58,9 @@ G.AddData({
 
         new G.Res({
             name:'grain',
-            desc:'[grain,Grain] can be ground into flour and baked into [bread].',
+            desc:'[grain,Grain] can be ground into flour and baked into [bread]. Nearly inedible on its own.',
             icon:[2,1,'agriculture'],
             category:'food',
-            partOf:'food',
             tick:function(me,tick){
                 var toSpoil=me.amount*0.01;
                 var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
