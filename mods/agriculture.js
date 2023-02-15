@@ -56,7 +56,7 @@ G.AddData({
             icon:[0,1,'agriculture'],
             cost:{},
             use:{'land':10},
-            upkeep:{'coin':0.5},
+            upkeep:{'coin':0.5,'water':6},
             modes:{
                 'off':G.MODE_OFF,
                 'grain':{name:'Grain farming',icon:[2,1,'agriculture'],desc:'Farm for [grain]',use:{'worker':5,'metal tools':5}},
@@ -83,7 +83,7 @@ G.AddData({
                 'Bake bread':{name:'Bread baking',icon:[2,1,'agriculture'],desc:'Bake [bread]',use:{'worker':5,'metal tools':5}}
             },
             effects:[
-                {type:'convert',from:{'grain':6,'water',3},into:{'bread':1},repeat:5,mode:'Bake bread'},
+                {type:'convert',from:{'grain':6,'water':3},into:{'bread':1},repeat:5,mode:'Bake bread'},
             ],
             req:{'agriculture':true,'cooking':true},
             category:'crafting',
