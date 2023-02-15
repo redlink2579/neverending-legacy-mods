@@ -36,7 +36,7 @@ G.AddData({
 
         new G.Unit({
             name:'farm',
-            desc:'@generates various plant resources<>[grain,Grain] can be baked into [bread], a stable food source.<>[cotton,Cotton] is a great material for making cotton',
+            desc:'@generates various plant resources<>[grain,Grain] can be baked into [bread], a stable food source.<>[cotton,Cotton] is a great material for making [basic clothes,clothes]',
             icon:[0,1,'agriculture'],
             cost:{},
             use:{'land':10},
