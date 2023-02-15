@@ -55,6 +55,23 @@ G.AddData({
             category:'production',
             gizmos:true,
         });
+        new G.Unit({
+            name:'bakery',
+            desc:'@bakes [grain] into [bread]',
+            icon:[24,2],
+            cost:{'basic building materials':100},
+            use:{'land':1},
+            upkeep:{'coin':0.5},
+            modes:{
+                'bread':{name:'Grain farming',icon:[2,1,'agriculture'],desc:'Farm for [grain]',use:{'worker':5,'metal tools':5}}
+            },
+            effects:[
+                {type:'convert',from:{'grain':6},into:{'bread':1},repeat:5,mode:'bread'},
+            ],
+            req:{'agriculture':true,'cooking':true},
+            category:'production',
+            gizmos:true,
+        });
 
         new G.Res({
             name:'grain',
