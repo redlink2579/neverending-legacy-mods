@@ -7,13 +7,22 @@ G.AddData({
 	func:function()
 	{
 
+
+        // Give everyone a bonus for polytheism
         for (let unit in G.unitByName) {
-            G.dict[unit].push({type:'mult',value:1.01,req:{'polytheism':true}})
+            G.dict[unit].effects.push({type:'mult',value:1.01,req:{'polytheism':true}});
+        }
+
+
+        // Give political units a bonus for monotheism
+        for (let unit in G.unitByName) {
+            if (G.dict[unit].category === 'political')
+                G.dict[unit].effects.push({type:'mult',value:1.5,req:{'mono':true}});
         }
 
 		new G.Trait({
             name:'monotheism',
-            desc:'@[clan leader]s and [chieftain]s generate more [influence]',
+            desc:'@[clan leader]s and [chieftain]s generate 50% more [influence]',
             icon:[20,1],
             chance:1,
             req:{'polytheism':false,"belief in the afterlife":true},
