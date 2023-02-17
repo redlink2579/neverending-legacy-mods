@@ -8,7 +8,7 @@ G.AddData({
 	{
 
         for (let unit in G.unitByName) {
-            unit.effects.push({type:'mult',value:1.2,req:{'monotheism':true}})
+            G.dict[unit].push({type:'mult',value:1.01,req:{'polytheism':true}})
         }
 
 		new G.Trait({

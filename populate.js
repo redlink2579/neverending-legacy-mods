@@ -35,7 +35,8 @@ let list = [
     new Mod('Custom Map Size','My good pal Damien was unhappy about the size of the map, so I went ahead and gave control of map size to the user.','https://therealohead.github.io/neverending-legacy-mods/mods/big-map.js'),
     new Mod('Meditation','During the endgame, it is literally not possible to generate fast ticks without pausing the game. Meditaters can help with that.','https://therealohead.github.io/neverending-legacy-mods/mods/meditater.js'),
     new Mod('Don\'t Eat Herbs','The only unavoidable way happiness can go down is eating herbs.<br>Why would people eat something they don\'t like when cured seafood and cooked meat exist?','https://therealohead.github.io/neverending-legacy-mods/mods/dont-eat-herbs.js'),
-    new Mod('Agriculture','Adds various farming units.','https://therealohead.github.io/neverending-legacy-mods/mods/agriculture.js')
+    new Mod('Agriculture','Adds various farming units.','https://therealohead.github.io/neverending-legacy-mods/mods/agriculture.js'),
+    new Mod('Theism','Makes it possible for your people to become either monotheistic or polytheistic..','https://therealohead.github.io/neverending-legacy-mods/mods/theism.js')
 ]
 
 list.forEach(mod=>{
