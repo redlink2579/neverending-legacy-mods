@@ -6,9 +6,12 @@ G.AddData({
     sheets:{'agriculture':'https://therealohead.github.io/neverending-legacy-mods/mods/agriculture/img/icons.png'},
 	func:function()
 	{   
-        G.dict['scavenging'].req['agriculture'] = false;
-        G.contextNames['grow']='Growing';
 
+        G.dict['scavenging'].req['agriculture'] = false; // Disable scavenging once agriculture is unlocked (doesn't actually work)
+        G.contextNames['grow']='Growing'; // Add growing context
+
+
+        // Agriculture tech
         new G.Tech({
             name:'agriculture',
             desc:'@unlocks [orchard]s, which provide [fruit] much faster than a gather can.<>@unlocks [farm]s, which produce [grain] or [cotton]<>@<span style="color:red">removes the [scavenging] trait</span>',
@@ -24,24 +27,27 @@ G.AddData({
             ],
         });
 
+
+        // Milling tech
         new G.Tech({
             name:'milling',
-            desc:'@unlocks [windmill]s@unlocks [water mill]s<>[windmill,Windmills] provide rotational force from wind<>[water mill,Water mills]',
+            desc:'@unlocks [windmill]s<>[windmill,Windmills] provide rotational force from wind, and that force can be used to do work',
             icon:[0,1,'agriculture',23,1],
             cost:{'insight':15},
             req:{'sedentism':true},
             effects:[
-                {type:'show context',what:['orchard','farm']},
+                {type:'show context',what:['farm']},
             ],
         });
 
+        // Orchard
         new G.Unit({
             name:'orchard',
             desc:'@generates [fruit]<>An [orchard] provides [fruit] much faster than a gather can.',
             icon:[1,1,'agriculture'],
             cost:{'fruit':15},
             use:{'worker':2,'land':5,'stone tools':2},
-            upkeep:{'coin':0.2},
+            upkeep:{'coin':1.0},
             effects:[
                 {type:'gather',context:'grow',what:{'fruit':15}},
                 {type:'mult',value:1.2,req:{'harvest rituals':'on'}}
@@ -50,13 +56,15 @@ G.AddData({
             category:'production',
         });
 
+
+        // Farm
         new G.Unit({
             name:'farm',
             desc:'@generates various plant resources<>[grain,Grain] can be baked into [bread], a stable food source.<>[cotton,Cotton] is a great material for making [basic clothes,clothes]',
             icon:[0,1,'agriculture'],
             cost:{},
             use:{'land':10},
-            upkeep:{'coin':0.5,'water':6},
+            upkeep:{'coin':2.0,'water':6},
             modes:{
                 'off':G.MODE_OFF,
                 'grain':{name:'Grain farming',icon:[2,1,'agriculture'],desc:'Farm for [grain]',use:{'worker':5,'metal tools':5}},
@@ -72,6 +80,8 @@ G.AddData({
             gizmos:true,
         });
 
+
+        // Bakery
         new G.Unit({
             name:'bakery',
             desc:'@bakes [grain] into [bread]',
@@ -80,7 +90,7 @@ G.AddData({
             use:{'land':1},
             upkeep:{'coin':0.5},
             modes:{
-                'Bake bread':{name:'Bread baking',icon:[2,1,'agriculture'],desc:'Bake [bread]',use:{'worker':5,'metal tools':5}}
+                'Bake bread':{name:'Bread baking',icon:[7,7],desc:'Bake [bread]',use:{'worker':5,'metal tools':5}}
             },
             effects:[
                 {type:'convert',from:{'grain':6,'water':3},into:{'bread':1},repeat:5,mode:'Bake bread'},
@@ -90,6 +100,7 @@ G.AddData({
             gizmos:true,
         });
 
+        // Grain
         new G.Res({
             name:'grain',
             desc:'[grain,Grain] can be ground into flour and baked into [bread]. Nearly inedible on its own.',
@@ -101,6 +112,7 @@ G.AddData({
             },
         });
 
+        // Cotton
         new G.Res({
             name:'cotton',
             desc:'[cotton,Cotton] can be sewn into [basic clothes,clothes].',
@@ -112,7 +124,9 @@ G.AddData({
             },
         });
 
-        G.getDict('clothier').modes['weave cotton clothes']={name:'Weave cotton clothing',desc:'Turn 40 [cotton] into [basic clothes].',req:{'agriculture':true},use:{'metal tools':1}};
+
+        // Allow clothier to make clothes from cotton
+        G.getDict('clothier').modes['weave cotton clothes']={name:'Weave cotton clothing',desc:'Turn 40 [cotton] into [basic clothes].',req:{'agriculture':true},use:{'metal tools':1},icon:[16,7]};
         G.getDict('clothier').effects.push({type:'convert',from:{'cotton':40},into:{'basic clothes':1},every:20,mode:'weave cotton clothes'});
 	}
 });
