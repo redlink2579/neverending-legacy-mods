@@ -26,6 +26,7 @@ G.AddData({
             desc:'@[clan leader]s and [chieftain]s generate 50% more [influence]',
             icon:[9,5,24,1],
             chance:1,
+            cost:{'faith':2},
             req:{'polytheism':false,'atheism':false,"belief in the afterlife":true},
         });
 
@@ -34,15 +35,25 @@ G.AddData({
             desc:'@all [worker]s have a very slight production boost',
             icon:[7,5,24,1],
             chance:1,
+            cost:{'faith':2},
             req:{'monotheism':false,'atheism':false,"belief in the afterlife":true},
         });
 
         new G.Trait({
             name:'atheism',
-            desc:'@reduced [happiness,unhappiness] from [corpse]s',
+            desc:'@Faith-based policies no longer cost [faith] to toggle',
             icon:[6,4,24,1],
             chance:1,
+            cost:{'culture':2}
             req:{'monotheism':false,'polytheism':false,"belief in the afterlife":true},
+            effects:[
+                {type:'function',func:function(){
+                    for (let policy in G.policy) {
+                        delete policy.cost.faith;
+                    }
+                    G.getDict('').turnToByContext['eating']['happiness']=0.03;
+                }},
+            ],
         });
 
 	}
