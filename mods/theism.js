@@ -24,7 +24,7 @@ G.AddData({
         new G.Trait({
             name:'monotheism',
             desc:'@[clan leader]s and [chieftain]s generate 50% more [influence]',
-            icon:[24,1,9,5],
+            icon:[9,5,24,1],
             chance:1,
             req:{'polytheism':false,'atheism':false,"belief in the afterlife":true},
         });
@@ -32,7 +32,7 @@ G.AddData({
         new G.Trait({
             name:'polytheism',
             desc:'@all [worker]s have a very slight production boost',
-            icon:[24,1,7,5],
+            icon:[7,5,24,1],
             chance:1,
             req:{'monotheism':false,'atheism':false,"belief in the afterlife":true},
         });
@@ -40,7 +40,7 @@ G.AddData({
         new G.Trait({
             name:'atheism',
             desc:'@reduced [happiness,unhappiness] from [corpse]s',
-            icon:[24,1,6,4],
+            icon:[6,4,24,1],
             chance:1,
             req:{'monotheism':false,'polytheism':false,"belief in the afterlife":true},
         });
