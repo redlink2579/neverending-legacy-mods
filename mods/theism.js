@@ -51,7 +51,6 @@ G.AddData({
                     for (let policy in G.policy) {
                         delete policy.cost.faith;
                     }
-                    G.getDict('').turnToByContext['eating']['happiness']=0.03;
                 }},
             ],
         });
