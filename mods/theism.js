@@ -9,14 +9,14 @@ G.AddData({
 
 
         // Give everyone a bonus for polytheism
-        for (let unit in G.unitByName) {
+        for (let unit of G.unitByName) {
             if (G.dict[unit].effects)
                 G.dict[unit].effects.push({type:'mult',value:1.01,req:{'polytheism':true}});
         }
 
 
         // Give political units a bonus for monotheism
-        for (let unit in G.unitByName) {
+        for (let unit of G.unitByName) {
             if (G.dict[unit].effects && G.dict[unit].category == 'political')
                 G.dict[unit].effects.push({type:'mult',value:1.5,req:{'monotheism':true}});
         }
