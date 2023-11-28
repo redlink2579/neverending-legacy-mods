@@ -43,7 +43,7 @@ G.AddData({
         // Orchard
         new G.Unit({
             name:'orchard',
-            desc:'@generates [fruit]<>An [orchard] provides [fruit] much faster than a gather can.',
+            desc:'@generates [fruit]<>An [orchard] provides [fruit] much faster than a gatherer can.',
             icon:[1,1,'agriculture'],
             cost:{'fruit':15},
             use:{'worker':2,'land':5,'stone tools':2},

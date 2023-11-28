@@ -1,7 +1,7 @@
 G.AddData({
 	name:'Theism',
 	author:'Owen "Ohead" Parker',
-	desc:'Adds Polytheism and Monotheism, both with different perks',
+	desc:'Adds Polytheism, Monotheism, and Atheism. They all have different perks',
 	engineVersion:1,
 	requires:['Default dataset*'],
 	func:function()
@@ -44,7 +44,7 @@ G.AddData({
             desc:'@Faith-based policies no longer cost [faith] to toggle',
             icon:[6,4,24,1],
             chance:1,
-            cost:{'culture':2}
+            cost:{'culture':2},
             req:{'monotheism':false,'polytheism':false,"belief in the afterlife":true},
             effects:[
                 {type:'function',func:function(){
