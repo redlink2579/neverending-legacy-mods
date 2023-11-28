@@ -48,7 +48,8 @@ G.AddData({
             req:{'monotheism':false,'polytheism':false,"belief in the afterlife":true},
             effects:[
                 {type:'function',func:function(){
-                    for (let policy in G.policy) {
+                    for (let policy of G.policy) {
+                        console.log(policy);
                         delete policy.cost.faith;
                     }
                 }},
