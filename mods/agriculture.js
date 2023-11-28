@@ -70,7 +70,7 @@ G.AddData({
             effects:[
                 {type:'gather',context:'grow',what:{'grain':15},mode:'grain'},
                 {type:'gather',context:'grow',what:{'cotton':15},mode:'cotton'},
-                {type:'convert',context:'raise',what:{'grain':16},into:{'meat':5},mode:'livestock'},
+                {type:'convert',context:'raise',from:{'grain':16},into:{'meat':5},every:3,mode:'livestock'},
                 {type:'mult',value:1.2,req:{'harvest rituals':'on'}}
             ],
             req:{'agriculture':true},
