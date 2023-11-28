@@ -21,22 +21,8 @@ G.AddData({
             effects:[
                 {type:'show context',what:['orchard','farm']},
                 {type:'function',func:()=>{
-                    console.log('We got agriculture');
                     G.dict['scavenging'].chance = 0;
                 }}
-            ],
-        });
-
-
-        // Milling tech
-        new G.Tech({
-            name:'milling',
-            desc:'@unlocks [windmill]s<>[windmill,Windmills] provide rotational force from wind, and that force can be used to do work',
-            icon:[0,1,'agriculture',23,1],
-            cost:{'insight':15},
-            req:{'sedentism':true},
-            effects:[
-                {type:'show context',what:['farm']},
             ],
         });
 
