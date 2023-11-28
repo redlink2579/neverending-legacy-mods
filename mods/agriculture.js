@@ -14,7 +14,7 @@ G.AddData({
         // Agriculture tech
         new G.Tech({
             name:'agriculture',
-            desc:'@unlocks [orchard]s, which provide [fruit] much faster than a gather can.<>@unlocks [farm]s, which produce [grain] or [cotton]<>@<span style="color:red">removes the [scavenging] trait</span>',
+            desc:'@unlocks [orchard]s, which provide [fruit] much faster than a gather can.<>@unlocks [farm]s, which produce [grain] or [cotton]<>@<span style="color:red">disables the [scavenging] trait</span>',
             icon:[0,1,'agriculture',23,1],
             cost:{'insight':15},
             req:{'sedentism':true},
@@ -24,6 +24,15 @@ G.AddData({
                     G.dict['scavenging'].chance = 0;
                 }}
             ],
+        });
+
+        // Livestock tech
+        new G.Tech({
+            name:'livestock farming',
+            desc:'@farms may now produce [meat] from livestock',
+            icon:[5,7],
+            cost:{insight:25},
+            req:{'hunting':true,'agriculture':true}
         });
 
         // Orchard
