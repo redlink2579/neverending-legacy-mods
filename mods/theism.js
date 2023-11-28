@@ -41,7 +41,7 @@ G.AddData({
 
         new G.Trait({
             name:'atheism',
-            desc:'@Faith-based policies no longer cost [faith] to toggle',
+            desc:'@Faith-based policies no longer cost [faith] to toggle, but still consume 1 [faith] every 20 days',
             icon:[6,4,24,1],
             chance:1,
             cost:{'culture':2},
