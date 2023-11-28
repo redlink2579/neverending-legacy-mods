@@ -65,12 +65,12 @@ G.AddData({
                 'off':G.MODE_OFF,
                 'grain':{name:'Grain farming',icon:[2,1,'agriculture'],desc:'Farm for [grain]',use:{'worker':5,'metal tools':5}},
                 'cotton':{name:'Cotton farming',icon:[3,1,'agriculture'],desc:'Farm for [cotton]',use:{'worker':3,'stone tools':3}},
-                'livestock':{name:'Livestock farming',icon:[5,7],desc:'Farm livestock for [meat,raw meat]',use:{'worker':5,'metal tools':5},req:{'livestock farming':true},upkeep:{'grain':8}},
+                'livestock':{name:'Livestock farming',icon:[5,7],desc:'Farm livestock for [meat,raw meat]',use:{'worker':5,'metal tools':5},req:{'livestock farming':true}},
             },
             effects:[
                 {type:'gather',context:'grow',what:{'grain':15},mode:'grain'},
                 {type:'gather',context:'grow',what:{'cotton':15},mode:'cotton'},
-                {type:'gather',context:'raise',what:{'meat':5},mode:'livestock'},
+                {type:'convert',context:'raise',what:{'grain':16},into:{'meat':5},mode:'livestock'},
                 {type:'mult',value:1.2,req:{'harvest rituals':'on'}}
             ],
             req:{'agriculture':true},
