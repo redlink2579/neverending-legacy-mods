@@ -43,7 +43,6 @@ G.AddData({
             icon:[1,1,'agriculture'],
             cost:{'fruit':15},
             use:{'worker':2,'land':5,'stone tools':2},
-            upkeep:{'coin':1.0},
             effects:[
                 {type:'gather',context:'grow',what:{'fruit':15}},
                 {type:'mult',value:1.2,req:{'harvest rituals':'on'}}
@@ -60,7 +59,7 @@ G.AddData({
             icon:[0,1,'agriculture'],
             cost:{},
             use:{'land':10},
-            upkeep:{'coin':2.0,'water':6},
+            upkeep:{'water':6},
             modes:{
                 'off':G.MODE_OFF,
                 'grain':{name:'Grain farming',icon:[2,1,'agriculture'],desc:'Farm for [grain]',use:{'worker':5,'metal tools':5}},
@@ -86,7 +85,6 @@ G.AddData({
             icon:[24,2],
             cost:{'basic building materials':100},
             use:{'land':1},
-            upkeep:{'coin':0.5},
             modes:{
                 'Bake bread':{name:'Bread baking',icon:[7,7],desc:'Bake [bread]',use:{'worker':5,'metal tools':5}}
             },
